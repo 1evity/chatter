@@ -12,5 +12,16 @@
                 </div>
             </div>
         </div>
+        @foreach ($chats as $chat)
+            <div class="card bg-base-100 shadow mt-8">
+                <div class="card-body">
+                    <div>
+                        <div class="font-semibold">{{$chat['author']}}</div>
+                        <div class="mt-1">{{$chat['message']}}</div>
+                        <div class="text-sm text-gray-500 mt-2">{{$chat['time']}}</div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 </x-layout>
