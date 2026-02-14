@@ -7,13 +7,13 @@
         <div class="card bg-base-100 shadow mt-8">
             <div class="card-body">
                 <div>
-                    <h1 class="text-3xl font-bold">Welcome to Chatter!</h1>
-                    <p class="mt-4 text-base-content/60">This is your brand new Laravel application.</p>
+                    <h1 class="text-3xl font-bold">Welcome to <u>Chatter</u> 👋</h1>
+                    <p class="mt-4 text-base-content/60">Read others chats, or go ahead and write your own!</p>
                 </div>
             </div>
         </div>
 
-        <h1 class="text-3xl font-bold mt-8">Latest Chirps</h1>
+        <h1 class="text-3xl font-semibold mt-8">Latest Chats</h1>
         <div class="space-y-4 mt-8">
             @forelse ($chats as $chat)
                 <x-chat :chat="$chat"/>

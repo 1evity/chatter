@@ -27,7 +27,7 @@
 
     <footer class="footer footer-center p-5 bg-base-300 text-base-content text-xs">
         <div>
-            <p>Made w/ ❤️ by <a href="https://github.com/1evity">1evity<span style="font-size: 20px;">∗</span></a></p>
+            <p style="font-size:15px">Made w/ 💙 by <a href="https://github.com/1evity" style="color:blue">@1evity<span style="font-size: 20px;">∗</span></a></p>
         </div>
     </footer>
 </body>
