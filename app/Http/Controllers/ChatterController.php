@@ -22,6 +22,9 @@ class ChatterController extends Controller
         // Validate the request
         $valid = $request->validate([
             'message' => 'required|string|max:255',
+        ], [
+            'message.required' => 'Please write something to chat!',
+            'message.max' => 'Chats must be 255 characters or less.'
         ]);
 
         // Create the chat
