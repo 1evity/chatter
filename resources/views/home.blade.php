@@ -12,16 +12,18 @@
                 </div>
             </div>
         </div>
-        @foreach ($chats as $chat)
+        @forelse ($chats as $chat)
             <div class="card bg-base-100 shadow mt-8">
                 <div class="card-body">
                     <div>
-                        <div class="font-semibold">{{$chat['author']}}</div>
-                        <div class="mt-1">{{$chat['message']}}</div>
-                        <div class="text-sm text-gray-500 mt-2">{{$chat['time']}}</div>
+                        <div class="font-semibold">{{$chat->user ? $chat->user->name : 'Anonymous'}}</div>
+                        <div class="mt-1">{{$chat->message}}</div>
+                        <div class="text-sm text-gray-500 mt-2">{{$chat->created_at->diffForHumans()}}</div>
                     </div>
                 </div>
             </div>
-        @endforeach
+        @empty
+            <p class="text-gray-500">No chats yet. Be the first to chat!</p>
+        @endforelse
     </div>
 </x-layout>
