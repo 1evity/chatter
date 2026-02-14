@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>
-       home feed
+       Feed
     </x-slot:title>
 
     <div class="max-w-2xl mx-auto">
@@ -14,6 +14,33 @@
         </div>
 
         <h1 class="text-3xl font-semibold mt-8">Latest Chats</h1>
+
+        <!--Chat form-->
+        <div class="card bg-base-100 shadow mt-8">
+            <div class="card-body">
+                <form method="POST" action="/chats">
+                    @csrf
+                    <div class="form-control w-full">
+                        <textarea
+                            name="message"
+                            placeholder="What's on your mind?"
+                            class="textarea textarea-bordered w-full resize-none"
+                            rows="4"
+                            maxlength="255"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="mt-4 flex items-center justify-end">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                           Post
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--Chats feed-->
         <div class="space-y-4 mt-8">
             @forelse ($chats as $chat)
                 <x-chat :chat="$chat"/>

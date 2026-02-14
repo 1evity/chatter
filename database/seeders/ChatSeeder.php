@@ -49,7 +49,7 @@ class ChatSeeder extends Seeder
         foreach ($chats as $message) {
             $users->random()->chats()->create([
                 'message' => $message,
-                'create_at' => now()->subMinutes(rand(5, 1440)),
+                'created_at' => now()->subMinutes(rand(5, 1440)),
             ]);
         }
     }
